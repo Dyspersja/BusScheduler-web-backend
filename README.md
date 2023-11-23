@@ -1,2 +1,2 @@
-# BusTransportScheduler-web-backend
-Backend for web application for bus transport scheduler created using Java with Spring Boot
+# BusScheduler-web-backend
+Backend for bus scheduler web application created using Java with Spring Boot
