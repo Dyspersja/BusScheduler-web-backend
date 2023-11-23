@@ -1,4 +1,4 @@
-package com.dyspersja.BusScheduler;
+package com.dyspersja.busscheduler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
