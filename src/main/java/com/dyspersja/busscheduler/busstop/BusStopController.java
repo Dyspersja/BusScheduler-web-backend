@@ -2,6 +2,7 @@ package com.dyspersja.busscheduler.busstop;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +18,10 @@ public class BusStopController {
     @GetMapping
     public List<BusStop> getBusStops() {
         return service.getBusStops();
+    }
+
+    @GetMapping("/{id}")
+    public BusStop getBusStops(@PathVariable int id) {
+        return service.getBusStop(id);
     }
 }

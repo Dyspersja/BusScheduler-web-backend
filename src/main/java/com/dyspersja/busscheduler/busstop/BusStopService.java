@@ -15,4 +15,8 @@ public class BusStopService {
         return repository.findAll();
     }
 
+    public BusStop getBusStop(int id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new BusStopNotFoundException(id));
+    }
 }
