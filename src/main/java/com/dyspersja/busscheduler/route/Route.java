@@ -1,9 +1,6 @@
 package com.dyspersja.busscheduler.route;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Time;
@@ -27,6 +24,7 @@ public class Route {
     @Column(name = "departure_time")
     private Time departureTime;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "operating_day")
     private OperatingDay operatingDay;
 }
