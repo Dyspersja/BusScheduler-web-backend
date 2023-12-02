@@ -1,4 +1,4 @@
-package com.dyspersja.busscheduler.busline;
+package com.dyspersja.busscheduler.route;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,18 +10,18 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "api/bus_lines")
-public class BusLineController {
+@RequestMapping(path = "api/routes")
+public class RouteController {
 
-    private final BusLineService service;
+    private final RouteService service;
 
     @GetMapping
-    public List<BusLine> getBusLines() {
-        return service.getBusLines();
+    public List<Route> getRoutes() {
+        return service.getRoutes();
     }
 
     @GetMapping("/{id}")
-    public BusLine getBusLine(@PathVariable int id) {
-        return service.getBusLine(id);
+    public Route getRoute(@PathVariable int id) {
+        return service.getRoute(id);
     }
 }

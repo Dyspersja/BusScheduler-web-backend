@@ -21,7 +21,7 @@ public class BusStopController {
     }
 
     @GetMapping("/{id}")
-    public BusStop getBusStops(@PathVariable int id) {
+    public BusStop getBusStop(@PathVariable int id) {
         return service.getBusStop(id);
     }
 }

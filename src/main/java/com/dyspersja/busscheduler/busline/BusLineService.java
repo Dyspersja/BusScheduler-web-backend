@@ -1,8 +1,5 @@
 package com.dyspersja.busscheduler.busline;
 
-import com.dyspersja.busscheduler.busstop.BusStop;
-import com.dyspersja.busscheduler.busstop.BusStopNotFoundException;
-import com.dyspersja.busscheduler.busstop.BusStopRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
