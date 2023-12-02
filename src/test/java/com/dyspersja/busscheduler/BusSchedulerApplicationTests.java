@@ -1,4 +1,4 @@
-package com.dyspersja.BusScheduler;
+package com.dyspersja.busscheduler;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
