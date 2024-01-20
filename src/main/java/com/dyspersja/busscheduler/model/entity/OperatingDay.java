@@ -1,4 +1,4 @@
-package com.dyspersja.busscheduler.database.route;
+package com.dyspersja.busscheduler.model.entity;
 
 public enum OperatingDay {
 

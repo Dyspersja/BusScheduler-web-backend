@@ -1,6 +1,5 @@
-package com.dyspersja.busscheduler.database.busstop;
+package com.dyspersja.busscheduler.model.entity;
 
-import com.dyspersja.busscheduler.database.citydistrict.CityDistrict;
 import jakarta.persistence.*;
 import lombok.*;
 
