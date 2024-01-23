@@ -1,10 +1,8 @@
 package com.dyspersja.busscheduler.service;
 
-import com.dyspersja.busscheduler.model.dto.BusLineDetailsDTO;
 import com.dyspersja.busscheduler.model.dto.BusStopBriefDTO;
 import com.dyspersja.busscheduler.repository.BusStopRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

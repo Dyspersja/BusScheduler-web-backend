@@ -1,6 +1,6 @@
 package com.dyspersja.busscheduler.service;
 
-import com.dyspersja.busscheduler.Exception.BusStopNotInRouteException;
+import com.dyspersja.busscheduler.exception.BusStopNotInRouteException;
 import com.dyspersja.busscheduler.model.dto.TimetableDTO;
 import com.dyspersja.busscheduler.model.entity.OperatingDay;
 import com.dyspersja.busscheduler.repository.LineStopRepository;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Time;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
