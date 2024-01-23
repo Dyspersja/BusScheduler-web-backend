@@ -23,7 +23,10 @@ public interface BusStopRepository extends JpaRepository<BusStop, Long> {
             "JOIN LineStop ls       ON bs.id = ls.busStop.id " +
             "JOIN BusLine bl        ON ls.busLine.id = bl.id " +
 
-            "WHERE bl.lineNumber = :lineNumber AND bl.isReturnLine = :isReturn")
+            "WHERE bl.lineNumber = :lineNumber " +
+            "    AND bl.isReturnLine = :isReturn " +
+
+            "ORDER BY ls.busStopOrder")
     List<BusStopBriefDTO> getBusStopsByLineNumberAndReturnLine(
             @Param("lineNumber") int lineNumber,
             @Param("isReturn") boolean isReturn
