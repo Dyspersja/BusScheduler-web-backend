@@ -4,9 +4,11 @@ import com.dyspersja.busscheduler.model.dto.BusLineDetailsDTO;
 import com.dyspersja.busscheduler.model.entity.BusLine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface BusLineRepository extends JpaRepository<BusLine, Long> {
     
     @Query("SELECT NEW com.dyspersja.busscheduler.model.dto.BusLineDetailsDTO(" +
@@ -26,9 +28,11 @@ public interface BusLineRepository extends JpaRepository<BusLine, Long> {
 
             "FROM BusLine bl " +
 
-            "JOIN LineStop start    ON bl.id = start.busLine.id AND start.isStart = true " +
+            "JOIN LineStop start    ON bl.id = start.busLine.id " +
+            "                           AND start.isStart = true " +
             "JOIN BusStop startStop ON start.busStop.id = startStop.id " +
-            "JOIN LineStop end      ON bl.id = end.busLine.id AND end.isEnd = true " +
+            "JOIN LineStop end      ON bl.id = end.busLine.id " +
+            "                           AND end.isEnd = true " +
             "JOIN BusStop endStop   ON end.busStop.id = endStop.id")
     List<BusLineDetailsDTO> getDetailedBusLines();
 }
