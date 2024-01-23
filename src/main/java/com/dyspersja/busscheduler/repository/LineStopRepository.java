@@ -4,7 +4,9 @@ import com.dyspersja.busscheduler.model.entity.LineStop;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface LineStopRepository extends JpaRepository<LineStop, Long> {
 
     @Query("SELECT ls.travelTime " +

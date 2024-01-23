@@ -4,9 +4,11 @@ import com.dyspersja.busscheduler.model.dto.BusLineDetailsDTO;
 import com.dyspersja.busscheduler.model.entity.BusLine;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface BusLineRepository extends JpaRepository<BusLine, Long> {
     
     @Query("SELECT NEW com.dyspersja.busscheduler.model.dto.BusLineDetailsDTO(" +
