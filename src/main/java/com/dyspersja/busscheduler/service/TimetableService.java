@@ -1,5 +1,6 @@
 package com.dyspersja.busscheduler.service;
 
+import com.dyspersja.busscheduler.Exception.BusStopNotInRouteException;
 import com.dyspersja.busscheduler.model.dto.TimetableDTO;
 import com.dyspersja.busscheduler.model.entity.OperatingDay;
 import com.dyspersja.busscheduler.repository.LineStopRepository;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Time;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -25,7 +27,9 @@ public class TimetableService {
         List<Time> sundays = routeRepository.getDepartureTimesByLineAndOperatingDay(
                 busLineId, OperatingDay.SUNDAYS);
 
-        int timeDelay = lineStopRepository.getTravelTimeByBusLineIdAndBusStopId(busLineId, busStopId);
+        int timeDelay = lineStopRepository
+                .getTravelTimeByBusLineIdAndBusStopId(busLineId, busStopId)
+                .orElseThrow(() -> new BusStopNotInRouteException(busLineId, busStopId));
 
         return TimetableDTO.builder()
                 .weekdays(plusMinutes(weekdays,timeDelay))

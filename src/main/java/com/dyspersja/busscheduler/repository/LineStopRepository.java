@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface LineStopRepository extends JpaRepository<LineStop, Long> {
 
@@ -13,7 +15,7 @@ public interface LineStopRepository extends JpaRepository<LineStop, Long> {
             "FROM LineStop ls " +
             "WHERE ls.busLine.id = :busLineId " +
             "    AND ls.busStop.id = :busStopId")
-    int getTravelTimeByBusLineIdAndBusStopId(
+    Optional<Integer> getTravelTimeByBusLineIdAndBusStopId(
             @Param("busLineId") Long busLineId,
             @Param("busStopId") Long busStopId
     );
