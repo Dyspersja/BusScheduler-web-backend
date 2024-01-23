@@ -20,6 +20,8 @@ public class TimetableController {
     ) {
         TimetableDTO timetable = service.getTimetableByLineAndBusStop(lineId, stopId);
 
-        return ResponseEntity.ok(timetable);
+        return timetable.isEmpty()
+                ? ResponseEntity.notFound().build()
+                : ResponseEntity.ok(timetable);
     }
 }

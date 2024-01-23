@@ -12,4 +12,10 @@ public class TimetableDTO {
     private List<Time> weekdays;
     private List<Time> saturdays;
     private List<Time> sundays;
+
+    public boolean isEmpty() {
+        return weekdays.isEmpty() &&
+                saturdays.isEmpty() &&
+                sundays.isEmpty();
+    }
 }
