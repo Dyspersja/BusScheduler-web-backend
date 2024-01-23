@@ -13,9 +13,9 @@ public class TimetableController {
 
     private final TimetableService service;
 
-    @GetMapping("/{lineId}")
+    @GetMapping()
     public ResponseEntity<TimetableDTO> getBusStopsByLineNumberAndReturnLine(
-            @PathVariable Long lineId,
+            @RequestParam(name = "line") Long lineId,
             @RequestParam(name = "stop") Long stopId
     ) {
         TimetableDTO timetable = service.getTimetableByLineAndBusStop(lineId, stopId);
